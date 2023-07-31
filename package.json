@@ -1,0 +1,17 @@
+{
+  "name": "wirespec-typescript-example",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "nodemon --exec 'ts-node' src/index.ts",
+    "prestart": "wirespec $(pwd)/petstore.json --openapi v2 -o gen -p petstore -l TypeScript"
+  },
+  "dependencies": {
+    "@flock/wirespec": "0.0.1-ts.0",
+    "ts-node": "9.1.1",
+    "typescript": "4.1.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+}
