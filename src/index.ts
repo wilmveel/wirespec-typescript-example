@@ -3,7 +3,7 @@ import {petstoreClient} from "./client"
 
 const addPet = async () => {
     const body = {id:999, name: "Dog", photoUrls:["woef.png"]}
-    const req = AddPet.requestApplicationJson(body)
+    const req = AddPet.requestApplicationJson({body})
     const res = await petstoreClient.addPet(req)
     switch(res.status){
         case 200: return res.content.body
@@ -12,7 +12,7 @@ const addPet = async () => {
 }
 
 const getPetById = async (id:number) => {
-    const req = GetPetById.requestUndefined(id)
+    const req = GetPetById.requestUndefined({petId:id})
     const res = await petstoreClient.getPetById(req)
     switch(res.status){
         case 200: return res.content.body
